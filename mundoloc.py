@@ -14,19 +14,17 @@ songs = [
     {"id": 2, "name": "Pablo Picasso"},
     {"id": 3, "name": "Leonardo da Vinci"}
 ]
-# sample
-
 
 # Routes for querying artists, songs, and albums
 @app.route('/artists')
 def get_artists():
     return jsonify(artists)
 
-    # Routes for querying artists, songs, and albums
 @app.route('/songs')
 def get_songs():
     return jsonify(songs)
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Set the port to 80
+    port = 80
+    app.run(host='0.0.0.0', port=port)
