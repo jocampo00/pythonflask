@@ -1,8 +1,6 @@
 from flask import Flask, jsonify
-from flasgger import Swagger
 
 app = Flask(__name__)
-swagger = Swagger(app)
 
 # Sample data for artists, songs, and albums
 artists = [
@@ -40,10 +38,6 @@ def get_songs():
     """
     return jsonify(songs)
 
-<<<<<<< HEAD
-@app.route('/apidocs/')
-def swagger_ui():
-    return jsonify(swagger(app))
 
 if __name__ == '__main__':
     # Set the port to 80
