@@ -8,6 +8,12 @@ artists = [
     {"id": 2, "name": "Pablo Picasso"},
     {"id": 3, "name": "Leonardo da Vinci"}
 ]
+
+songs = [
+    {"id": 1, "name": "ViAJAA dovan Gogh"},
+    {"id": 2, "name": "Pablo Picasso"},
+    {"id": 3, "name": "Leonardo da Vinci"}
+]
 # sample
 
 
@@ -15,6 +21,11 @@ artists = [
 @app.route('/artists')
 def get_artists():
     return jsonify(artists)
+
+    # Routes for querying artists, songs, and albums
+@app.route('/songs')
+def get_songs():
+    return jsonify(songs)
 
 
 if __name__ == '__main__':
