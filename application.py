@@ -1,8 +1,6 @@
 from flask import Flask, jsonify
-from flasgger import Swagger
 
 app = Flask(__name__)
-swagger = Swagger(app)
 
 # Sample data for artists, songs, and albums
 artists = [
@@ -47,8 +45,6 @@ if __name__ == '__main__':
 
 
           
-          Expand Down
     
     
   
-    app.run(host='0.0.0.0', port=port)
