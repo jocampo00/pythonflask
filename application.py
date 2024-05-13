@@ -15,7 +15,7 @@ songs = [
 ]
 # Routes for querying artists, songs, and albums
 @app.route('/artists', methods=['GET'])
-def get_artists():
+  def get_artists():
     """
     Retrieve a list of artists.
     ---
@@ -25,7 +25,7 @@ def get_artists():
     """
     return jsonify(artists)
 @app.route('/songs', methods=['GET'])
-def get_songs():
+  def get_songs():
     """
     Retrieve a list of songs.
     ---
