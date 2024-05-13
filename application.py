@@ -1,5 +1,8 @@
 from flask import Flask, jsonify
+<<<<<<< HEAD
 from flasgger import Swagger
+=======
+>>>>>>> a1706de87cf61e34663aac4930a0073fc2c0fc99
 
 app = Flask(__name__)
 swagger = Swagger(app)
@@ -40,11 +43,20 @@ def get_songs():
     """
     return jsonify(songs)
 
+<<<<<<< HEAD
 @app.route('/apidocs/')
 def swagger_ui():
     return jsonify(swagger(app))
 
+=======
+>>>>>>> a1706de87cf61e34663aac4930a0073fc2c0fc99
 if __name__ == '__main__':
     # Set the port to 80
     port = 80
     app.run(host='0.0.0.0', port=port)
+
+
+          
+    
+    
+  
