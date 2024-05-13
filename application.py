@@ -1,7 +1,8 @@
 from flask import Flask, jsonify
-from flask_swagger_ui import get_swaggerui_blueprint
+from flasgger import Swagger
 
 app = Flask(__name__)
+swagger = Swagger(app)
 
 # Sample data for artists, songs, and albums
 artists = [
@@ -17,33 +18,31 @@ songs = [
 ]
 
 # Routes for querying artists, songs, and albums
-@app.route('/artists')
+@app.route('/artists', methods=['GET'])
 def get_artists():
+    """
+    Retrieve a list of artists.
+    ---
+    responses:
+      200:
+        description: A list of artists.
+    """
     return jsonify(artists)
 
-@app.route('/songs')
+@app.route('/songs', methods=['GET'])
 def get_songs():
+    """
+    Retrieve a list of songs.
+    ---
+    responses:
+      200:
+        description: A list of songs.
+    """
     return jsonify(songs)
 
-@app.route('/swagger.json')
-def swagger_json():
-    return jsonify(swagger_data)  # Replace `swagger_data` with your actual Swagger JSON data
-
-
-# Swagger UI configuration
-SWAGGER_URL = '/swagger'
-API_URL = '/swagger.json'
-
-swaggerui_blueprint = get_swaggerui_blueprint(
-    SWAGGER_URL,
-    API_URL,
-    config={
-        'app_name': "Your Flask Application"
-    }
-)
-
-# Register the Swagger UI blueprint with the app
-app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+@app.route('/apidocs/')
+def swagger_ui():
+    return jsonify(swagger(app))
 
 if __name__ == '__main__':
     # Set the port to 80
