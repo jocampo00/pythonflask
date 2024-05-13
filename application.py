@@ -24,7 +24,6 @@ def get_artists():
 def get_songs():
     return jsonify(songs)
 
-
 if __name__ == '__main__':
     # Set the port to 80
     port = 80
