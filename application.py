@@ -8,13 +8,11 @@ artists = [
     {"id": 2, "name": "Pablo Picasso"},
     {"id": 3, "name": "Leonardo da Vinci"}
 ]
-
 songs = [
     {"id": 1, "name": "ViAJAA dovan Gogh"},
     {"id": 2, "name": "Pablo Picasso"},
     {"id": 3, "name": "Leonardo da Vinci"}
 ]
-
 # Routes for querying artists, songs, and albums
 @app.route('/artists', methods=['GET'])
 def get_artists():
@@ -26,7 +24,6 @@ def get_artists():
         description: A list of artists.
     """
     return jsonify(artists)
-
 @app.route('/songs', methods=['GET'])
 def get_songs():
     """
@@ -38,14 +35,9 @@ def get_songs():
     """
     return jsonify(songs)
 
-
 if __name__ == '__main__':
     # Set the port to 80
     port = 80
-    app.run(host='0.0.0.0', port=port)
-
-
-          
     
     
   
